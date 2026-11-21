@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poseidon Yachting Caraïbes</title>
+<meta name="description" content="Poseidon Yachting Caraïbes – watertoys électriques à Saint-Barthélemy : Sublue Vapor Pro et eFoil JetWave livrés à bord de votre bateau, au départ de Gustavia.">
+<link rel="icon" href="img/logo-cercle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palette tirée du logo : bleu marine du cercle, rouge Poseidon, gris trident, sable des plages */
+  --navy:#1C2C5B;
+  --navy-deep:#111C3D;
+  --red:#B8292F;
+  --silver:#8E9196;
+  --sand:#F4F1EA;
+  --ink:#1A1F2B;
+  --white:#FFFFFF;
+  --line:#DCD8CE;
+  --font-display:"Josefin Sans","Gill Sans","Trebuchet MS",sans-serif;
+  --font-body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  /* Mise en page : bandeau photo, puis sections alternées texte / image, tarifs en tableau, réservation en 3 étapes */
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,3.2vw,2.5rem);color:var(--navy);letter-spacing:.02em}
+h3{font-size:1.25rem;color:var(--navy);letter-spacing:.03em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--font-display);font-weight:600;font-size:.82rem;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+
+
+/* En-tête */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:58px;height:58px}
+.brand span{font-family:var(--font-display);font-weight:700;color:var(--navy);letter-spacing:.14em;font-size:.95rem;line-height:1.2;text-transform:uppercase}
+.brand small{display:block;font-weight:400;color:var(--silver);letter-spacing:.3em;font-size:.72rem}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-weight:500;font-size:.92rem;color:var(--ink)}
+nav a:hover{color:var(--red)}
+.lang{display:flex;border:1px solid var(--navy);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;font:600 .74rem var(--font-body);padding:6px 9px;cursor:pointer;color:var(--navy);letter-spacing:.06em;display:inline-flex;align-items:center;gap:5px}
+.flag{width:20px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+.lang button[aria-pressed="true"]{background:var(--navy);color:var(--white)}
+@media (max-width:980px){nav .nl{display:none}}
+@media (max-width:520px){.brand span{display:none}.lang button span{display:none}.lang button{padding:7px 8px}}
+
+/* Bandeau */
+.hero{position:relative;color:var(--white);background:var(--navy-deep) url("img/hero-efoil.jpg") center 62%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,28,61,.88) 0%,rgba(17,28,61,.55) 48%,rgba(17,28,61,.05) 100%)}
+.hero .wrap{position:relative;padding-top:96px;padding-bottom:104px}
+.hero .eyebrow{color:#F3B7B9}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);max-width:15ch;margin:14px 0 20px;letter-spacing:.01em}
+.hero p.lead{max-width:52ch;font-size:1.08rem;color:#E4E8F2}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:4px;letter-spacing:.03em}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:#9C2025}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.8);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* Bande de points clés */
+.keys{background:var(--navy);color:var(--white)}
+.keys .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.key{padding:26px 24px;border-left:1px solid rgba(255,255,255,.15)}
+.key:first-child{border-left:0}
+.key b{display:block;font-family:var(--font-display);font-size:1.15rem;letter-spacing:.04em}
+.key span{color:#C6CCDB;font-size:.9rem}
+@media (max-width:760px){.keys .wrap{grid-template-columns:1fr}.key{border-left:0;border-top:1px solid rgba(255,255,255,.15)}.key:first-child{border-top:0}}
+
+/* Sections produit */
+section{padding:88px 0}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.split.rev .media{order:2}
+.media img{width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:6px}
+.copy{display:grid;gap:18px}
+.copy p{max-width:58ch;color:#3A4152}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.spec{border-top:3px solid var(--navy);padding-top:10px}
+.spec b{display:block;font-family:var(--font-display);font-size:1.45rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.spec span{font-size:.82rem;color:var(--silver);line-height:1.35;display:block}
+.brandline{font-size:.8rem;color:var(--silver);letter-spacing:.06em}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}.split.rev .media{order:0}section{padding:64px 0}}
+.alt{background:var(--sand)}
+
+/* Tarifs */
+.tarifs table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--white);font-variant-numeric:tabular-nums}
+.tarifs th,.tarifs td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.tarifs thead th{font-family:var(--font-display);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--silver);font-weight:600}
+.tarifs td.price{font-family:var(--font-display);font-weight:700;font-size:1.3rem;color:var(--navy);white-space:nowrap}
+.tarifs th small{display:block;color:var(--silver);font-size:.84rem;margin-top:4px;font-weight:400}
+.tarifs td small{display:block;color:var(--silver);font-size:.84rem;margin-top:4px}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--navy);color:var(--white);padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.tablebox{overflow-x:auto}
+.note{margin-top:14px;font-size:.86rem;color:var(--silver)}
+
+/* Étapes */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:28px}
+.step .n{font-family:var(--font-display);font-weight:700;font-size:2.4rem;color:var(--red);line-height:1}
+.step h3{margin:12px 0 8px}
+.step p{color:#3A4152;font-size:.95rem}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* École */
+.ecole{background:var(--navy-deep);color:var(--white)}
+.ecole h2{color:var(--white)}
+.ecole .copy p{color:#C6CCDB}
+.ecole ul{margin:0;padding-left:20px;color:#E4E8F2;display:grid;gap:6px}
+.soon{display:inline-block;border:1px solid #F3B7B9;color:#F3B7B9;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border-radius:3px;font-weight:600;justify-self:start}
+
+/* Partenaire */
+.partner .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.partner img{width:230px;height:auto;background:var(--navy);padding:22px 26px;border-radius:6px}
+.partner p{max-width:62ch;color:#3A4152}
+
+/* Contact & pied */
+footer{background:var(--navy);color:#D5DAE6;padding:64px 0 28px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer img.logo{width:240px}
+footer h3{color:var(--white);font-size:1rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+footer a{color:var(--white)}
+footer p{margin-bottom:8px}
+.social{display:flex;gap:12px;margin-top:6px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.4);border-radius:50%}
+.social a:hover{background:rgba(255,255,255,.12)}
+.social svg{width:20px;height:20px;fill:var(--white)}
+.legal{border-top:1px solid rgba(255,255,255,.15);margin-top:44px;padding-top:20px;font-size:.8rem;color:#9AA3BA;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){.foot{grid-template-columns:1fr}}
+
+/* Formulaire de réservation */
+.intro{max-width:62ch;color:#3A4152;margin-top:12px}
+.resa{margin-top:32px;display:grid;gap:22px}
+.resa fieldset{border:1px solid var(--line);border-radius:8px;background:var(--white);padding:24px;margin:0;min-width:0}
+.resa legend{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;color:var(--navy);font-size:1.1rem;letter-spacing:.03em;padding:0 8px}
+.resa legend .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--red);color:var(--white);font-size:.95rem}
+.boats{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:8px}
+.boat{position:relative;display:flex;flex-direction:column;gap:2px;border:1.5px solid var(--line);border-radius:6px;padding:12px 12px 10px 38px;cursor:pointer;background:var(--white);transition:border-color .15s,background .15s}
+.boat:hover{border-color:var(--silver)}
+.boat input{position:absolute;left:12px;top:14px;accent-color:var(--red);width:16px;height:16px;margin:0}
+.boat .bn{font-weight:600;color:var(--navy)}
+.boat small{color:var(--silver);font-size:.78rem;letter-spacing:.04em}
+.boat .see{font-size:.8rem;margin-top:4px;color:var(--red);text-decoration:underline;align-self:flex-start}
+.boat:has(input:checked){border-color:var(--navy);background:#EEF1F8}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;align-content:start}
+.field label,.field .lab{font-weight:600;font-size:.88rem;color:var(--ink)}
+.field small{color:var(--silver);font-size:.8rem}
+.resa input[type=text],.resa input[type=email],.resa input[type=tel],.resa input[type=date],.resa input[type=number]{font:inherit;border:1.5px solid var(--line);border-radius:6px;padding:11px 12px;background:var(--white);color:var(--ink);width:100%}
+.resa input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(28,44,91,.15)}
+.seg{display:flex;border:1.5px solid var(--line);border-radius:6px;overflow:hidden}
+.seg label{flex:1;position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;text-align:center;padding:11px 8px;font-weight:500}
+.seg input:checked+span{background:var(--navy);color:var(--white)}
+.seg input:focus-visible+span{outline:3px solid var(--red);outline-offset:-3px}
+.step-in{display:flex;align-items:stretch;max-width:180px}
+.step-in button{width:44px;border:1.5px solid var(--line);background:var(--sand);font-size:1.2rem;cursor:pointer;color:var(--navy)}
+.step-in button:first-child{border-radius:6px 0 0 6px}.step-in button:last-child{border-radius:0 6px 6px 0}
+.step-in input{text-align:center;border-radius:0!important;border-left:0!important;border-right:0!important;-moz-appearance:textfield}
+.step-in input::-webkit-inner-spin-button{-webkit-appearance:none}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.total b{font-family:var(--font-display);font-size:1.6rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.88rem;color:#3A4152}
+.consent input{margin-top:3px;accent-color:var(--red)}
+.send{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.send .btn{border:0;cursor:pointer;font-family:var(--font-body)}
+.fstatus{font-size:.92rem;margin:0}
+.fstatus.ok{color:#1E6B3A}.fstatus.err{color:var(--red)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Poseidon Yachting Caraïbes">
+      <img src="img/logo-cercle.png" alt="">
+      <span>Poseidon Yachting<small>Caraïbes</small></span>
+    </a>
+    <nav aria-label="Navigation">
+      <a class="nl" href="#vapor">Vapor Pro</a>
+      <a class="nl" href="#efoil">eFoil</a>
+      <a class="nl" href="#tarifs" data-i18n="nav_prices">Tarifs</a>
+      <a class="nl" href="#contact">Contact</a>
+      <div class="lang" role="group" aria-label="Langue / Language / Idioma / Idioma">
+        <button type="button" id="btn-fr" data-set="fr" aria-pressed="true" title="Français"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>FR</span></button>
+        <button type="button" id="btn-en" data-set="en" aria-pressed="false" title="English (US)"><svg class="flag" viewBox="0 0 19 10" aria-hidden="true"><rect width="19" height="10" fill="#B22234"/><g fill="#fff"><rect y="0.77" width="19" height="0.77"/><rect y="2.31" width="19" height="0.77"/><rect y="3.85" width="19" height="0.77"/><rect y="5.38" width="19" height="0.77"/><rect y="6.92" width="19" height="0.77"/><rect y="8.46" width="19" height="0.77"/></g><rect width="7.6" height="5.38" fill="#3C3B6E"/><g fill="#fff"><circle cx="1.3" cy="1.1" r=".35"/><circle cx="3.8" cy="1.1" r=".35"/><circle cx="6.3" cy="1.1" r=".35"/><circle cx="2.55" cy="2.7" r=".35"/><circle cx="5.05" cy="2.7" r=".35"/><circle cx="1.3" cy="4.3" r=".35"/><circle cx="3.8" cy="4.3" r=".35"/><circle cx="6.3" cy="4.3" r=".35"/></g></svg><span>EN</span></button>
+        <button type="button" id="btn-es" data-set="es" aria-pressed="false" title="Español"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg><span>ES</span></button>
+        <button type="button" id="btn-pt" data-set="pt" aria-pressed="false" title="Português (Brasil)"><svg class="flag" viewBox="0 0 10 7" aria-hidden="true"><rect width="10" height="7" fill="#009C3B"/><path d="M5 .8 9.2 3.5 5 6.2 .8 3.5Z" fill="#FFDF00"/><circle cx="5" cy="3.5" r="1.75" fill="#002776"/><path d="M3.3 3.2q1.8-.5 3.4.6" stroke="#fff" stroke-width=".25" fill="none"/></svg><span>PT</span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Saint-Barthélemy · Gustavia</div>
+    <h1 data-i18n="hero_title">Les watertoys électriques, livrés à bord</h1>
+    <p class="lead" data-i18n="hero_lead">Scooters sous-marins Sublue Vapor Pro et eFoils JetWave pour vos sorties en bateau à St Barth. Silencieux, sans essence, prêts à l'eau dès le mouillage.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="#reserver" data-i18n="cta_book">Ajouter des toys à mon bateau</a>
+      <a class="btn btn-ghost" href="#tarifs" data-i18n="cta_prices">Voir les tarifs</a>
+    </div>
+  </div>
+</div>
+
+<div class="keys">
+  <div class="wrap">
+    <div class="key"><b data-i18n="k1_t">Vapor Pro inclus</b><span data-i18n="k1_d">Un scooter sous-marin à bord de chaque bateau Master Ski Pilou</span></div>
+    <div class="key"><b data-i18n="k2_t">eFoil en session de 2 h</b><span data-i18n="k2_d">Livré et rechargé à bord, à la demi-journée ou à la journée</span></div>
+    <div class="key"><b data-i18n="k3_t">Départ Gustavia</b><span data-i18n="k3_d">Rue Jeanne d'Arc, au port de Gustavia</span></div>
+  </div>
+</div>
+
+<section id="vapor">
+  <div class="wrap split">
+    <div class="media"><img src="img/vapor-pro.jpg" data-i18n-alt="vp_alt" alt="Scooter sous-marin Sublue Vapor Pro posé sur le pont d'un bateau" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow" data-i18n="vp_eye">Scooter sous-marin</div>
+      <h2>Sublue Vapor Pro</h2>
+      <p data-i18n="vp_p">Agrippez les poignées et laissez-vous tirer le long des récifs de Colombier, Gouverneur ou Shell Beach. Le Vapor Pro se prend en main en quelques minutes, sans permis, et l'écran affiche la vitesse, la profondeur et l'autonomie restante.</p>
+      <div class="specs">
+        <div class="spec"><b data-i18n="vp_s1">12 km/h</b><span data-i18n="vp_s1d">7,5 mph · 4 vitesses</span></div>
+        <div class="spec"><b data-i18n="vp_s2">jusqu'à 2 h</b><span data-i18n="vp_s2d">avec 2 batteries</span></div>
+        <div class="spec"><b data-i18n="vp_s3">8,6 kg</b><span data-i18n="vp_s3d">facile à mettre à l'eau depuis la plage arrière</span></div>
+      </div>
+      <p class="brandline">Sublue · Power Xtreme</p>
+    </div>
+  </div>
+</section>
+
+<section id="efoil" class="alt">
+  <div class="wrap split rev">
+    <div class="media"><img src="img/efoil-session.jpg" data-i18n-alt="ef_alt" alt="Rider en eFoil JetWave au-dessus de l'eau" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow" data-i18n="ef_eye">Planche électrique à foil</div>
+      <h2>eFoil JetWave</h2>
+      <p data-i18n="ef_p">La planche se soulève au-dessus de l'eau et glisse en silence, sans vague et sans bruit de moteur. On l'emporte à bord pour une session de 2 heures au mouillage. En sortie à la journée, la batterie est rechargée à midi sur le groupe électrogène du bateau pour repartir l'après-midi.</p>
+      <div class="specs">
+        <div class="spec"><b data-i18n="ef_s1">50 km/h</b><span data-i18n="ef_s1d">31 mph · vitesse de pointe</span></div>
+        <div class="spec"><b>2 h</b><span data-i18n="ef_s2d">par session, recharge du midi offerte en journée</span></div>
+        <div class="spec"><b data-i18n="ef_s3">Tous niveaux</b><span data-i18n="ef_s3d">vitesse limitée pour débuter, télécommande sans fil</span></div>
+      </div>
+      <p class="brandline">JetWave eFoil</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs" class="tarifs">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="pr_eye">Tarifs 2026–2027</div>
+    <h2 data-i18n="pr_title">Ajoutez vos toys à la location du bateau</h2>
+    <div class="tablebox">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="pr_c1">Watertoy</th>
+            <th scope="col" data-i18n="pr_c2">Bateau ½ journée</th>
+            <th scope="col" data-i18n="pr_c3">Bateau journée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sublue Vapor Pro <span class="tag" data-i18n="incl">Inclus</span><small data-i18n="pr_r1">1 scooter et 2 batteries à bord de chaque bateau</small></th>
+            <td class="price" data-i18n="incl">Inclus</td>
+            <td class="price"><span data-i18n="incl">Inclus</span><small data-i18n="pr_r1b">+ 2 batteries offertes</small></td>
+          </tr>
+          <tr>
+            <th scope="row"><span data-i18n="pr_r2">Vapor Pro supplémentaire</span><small data-i18n="pr_r2d">batteries fournies : 2 en ½ journée, 4 en journée</small></th>
+            <td class="price">150 €</td>
+            <td class="price">250 €</td>
+          </tr>
+          <tr>
+            <th scope="row">eFoil JetWave<small data-i18n="pr_r3d">session de 2 h avec une batterie</small></th>
+            <td class="price">500 €</td>
+            <td class="price">500 €<small data-i18n="pr_r3b">recharge du midi offerte</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" data-i18n="pr_note">Prix par appareil, en euros. Les watertoys se réservent avec la location du bateau.</p>
+  </div>
+</section>
+
+<section id="reserver" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="bk_eye">Réserver</div>
+    <h2 data-i18n="bk_title">Ajoutez vos toys à votre bateau</h2>
+    <p class="intro" data-i18n="bk_intro">Vous avez déjà réservé votre bateau avec Master Ski Pilou ? Cochez-le, choisissez vos toys : nous préparons tout et le matériel vous attend à bord.</p>
+
+    <form id="resa" class="resa" novalidate>
+      <fieldset>
+        <legend><span class="n">1</span><span data-i18n="f1">Votre bateau</span></legend>
+        <div class="boats">
+        <label class="boat"><input type="radio" name="boat" value="100' Broward – GEMINI LADY" required><span class="bn">100' Broward</span><small>GEMINI LADY</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/100-broward" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="80' Leopard – ULTIM" required><span class="bn">80' Leopard</span><small>ULTIM</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/80-leopard" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="74' Princess – PAPA FIVE" required><span class="bn">74' Princess</span><small>PAPA FIVE</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/74-princess" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="74' Mochi – POLISSENA" required><span class="bn">74' Mochi</span><small>POLISSENA</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/mochi-74" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="72' Princess – BALBEK" required><span class="bn">72' Princess</span><small>BALBEK</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/copie-de-mochi-74" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="69' Princess – STEALIN SUN" required><span class="bn">69' Princess</span><small>STEALIN SUN</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/copie-de-72-princess" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="68' Sunseeker – CALI" required><span class="bn">68' Sunseeker</span><small>CALI</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/68-sunseeker" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="63' BlueGame – THE HIVE" required><span class="bn">63' BlueGame</span><small>THE HIVE</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/blue-game-yacht" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="58' Fiart – PASSION" required><span class="bn">58' Fiart</span><small>PASSION</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/54-fiart-coming-soon" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="55' Princess – NATHALIE" required><span class="bn">55' Princess</span><small>NATHALIE</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/55-vandutch-copie" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="55' Vandutch – MOH" required><span class="bn">55' Vandutch</span><small>MOH</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/55-vandutch" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="53' Sunseeker – CARPE DIEM" required><span class="bn">53' Sunseeker</span><small>CARPE DIEM</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/53-sunseeker" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="48' Solaris – SERENDIPITY" required><span class="bn">48' Solaris</span><small>SERENDIPITY</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/48-solaris" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="45' Axopar – SASHA" required><span class="bn">45' Axopar</span><small>SASHA</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/45-axopar" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="44' Contender" required><span class="bn">44' Contender</span><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/44-contender-1" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="42' Sea Ray – SEA COTTAGE" required><span class="bn">42' Sea Ray</span><small>SEA COTTAGE</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/42-sea-ray" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="37' Axopar – BARRE AU VENT" required><span class="bn">37' Axopar</span><small>BARRE AU VENT</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/37-axopar" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="35' Gemini – INTERCEPTOR" required><span class="bn">35' Gemini</span><small>INTERCEPTOR</small><a class="see" href="https://masterski-pilou.com/collections/ships-collection/products/35-gemini" target="_blank" rel="noopener" data-pop data-i18n="bt_see">Voir le bateau</a></label>
+        <label class="boat"><input type="radio" name="boat" value="46' Impulse – POSEIDON"><span class="bn">46' Impulse</span><small>POSEIDON</small></label>
+        <label class="boat"><input type="radio" name="boat" value="28' Semi-rigide – 88"><span class="bn">28' Semi-rigide</span><small>88</small></label>
+        <label class="boat"><input type="radio" name="boat" value="Autre"><span class="bn" data-i18n="bt_other">Autre bateau</span><small data-i18n="bt_other_d">précisez en commentaire</small></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="n">2</span><span data-i18n="f2">Votre sortie et vos toys</span></legend>
+        <div class="grid2">
+          <div class="field"><label for="f-date" data-i18n="l_date">Date de la sortie</label><input id="f-date" name="date" type="date" required></div>
+          <div class="field"><span class="lab" data-i18n="l_type">Durée</span>
+            <div class="seg"><label><input type="radio" name="type" value="half" checked><span data-i18n="t_half">½ journée</span></label><label><input type="radio" name="type" value="full"><span data-i18n="t_full">Journée</span></label></div></div>
+          <div class="field"><label for="f-vapor" data-i18n="l_vapor">Vapor Pro supplémentaires</label>
+            <div class="step-in"><button type="button" data-dec="f-vapor" aria-label="-">−</button><input id="f-vapor" name="vapor" type="number" min="0" max="6" value="0" inputmode="numeric"><button type="button" data-inc="f-vapor" aria-label="+">+</button></div>
+            <small data-i18n="h_vapor">1 Vapor Pro est déjà inclus à bord</small></div>
+          <div class="field"><label for="f-efoil" data-i18n="l_efoil">Sessions eFoil (2 h)</label>
+            <div class="step-in"><button type="button" data-dec="f-efoil" aria-label="-">−</button><input id="f-efoil" name="efoil" type="number" min="0" max="4" value="0" inputmode="numeric"><button type="button" data-inc="f-efoil" aria-label="+">+</button></div></div>
+        </div>
+        <div class="total"><span data-i18n="l_total">Total watertoys estimé</span><b id="tot">0 €</b></div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="n">3</span><span data-i18n="f3">Vos coordonnées</span></legend>
+        <div class="grid2">
+          <div class="field"><label for="f-name" data-i18n="l_name">Nom et prénom</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email" data-i18n="l_email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone" data-i18n="l_phone">Téléphone / WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-msg" data-i18n="l_msg">Commentaire</label><input id="f-msg" name="message" type="text"></div>
+        </div>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="consent"><input type="checkbox" name="consent" id="f-consent" required><span data-i18n="l_consent">J'accepte que mes coordonnées soient utilisées pour traiter ma demande.</span></label>
+      </fieldset>
+
+      <div class="send">
+        <button type="submit" class="btn btn-red" data-i18n="b_send">Envoyer ma demande</button>
+        <p id="f-status" class="fstatus" role="status" aria-live="polite"></p>
+      </div>
+      <p class="note" data-i18n="f_note">Vous recevez une copie par e-mail. Nous confirmons la disponibilité du matériel sous 24 h.</p>
+    </form>
+  </div>
+</section>
+
+<section class="ecole">
+  <div class="wrap split">
+    <div class="media"><img src="img/efoil-ecole.jpg" data-i18n-alt="sc_alt" alt="Deux moniteurs dans l'eau avec leurs eFoils JetWave" loading="lazy"></div>
+    <div class="copy">
+      <span class="soon" data-i18n="sc_soon">Bientôt</span>
+      <h2 data-i18n="sc_title">École d'eFoil en semi-rigide</h2>
+      <p data-i18n="sc_p">Pour apprendre en toute sécurité, une sortie dédiée en semi-rigide avec un moniteur diplômé et assuré, plusieurs planches et un petit groupe.</p>
+      <ul>
+        <li data-i18n="sc_l1">Moniteur certifié, assurance moniteur</li>
+        <li data-i18n="sc_l2">Spots abrités, eau calme pour décoller</li>
+        <li data-i18n="sc_l3">Infos et pré-réservation sur demande</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="partner">
+  <div class="wrap">
+    <img src="img/masterski-pilou.png" alt="Master Ski Pilou">
+    <div>
+      <div class="eyebrow" data-i18n="pa_eye">Partenaire</div>
+      <p style="margin-top:8px" data-i18n="pa_p">Nos watertoys équipent la flotte de Master Ski Pilou, spécialiste de la location de bateaux avec skipper et des transferts privés entre St Barth, St Martin et Anguilla.</p>
+      <p style="margin-top:10px"><a href="https://www.masterski-pilou.com/">masterski-pilou.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div><img class="logo" src="img/logo-blanc.png" alt="Poseidon Yachting Caraïbes"></div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="mailto:contact@poseidonyachtingcaraibes.com">contact@poseidonyachtingcaraibes.com</a></p>
+        <p>Rue Jeanne d'Arc<br>Port de Gustavia<br>97133 Saint-Barthélemy</p>
+      </div>
+      <div>
+        <h3 data-i18n="ft_follow">Suivez-nous</h3>
+        <div class="social">
+          <a id="lien-instagram" href="https://www.instagram.com/poseidonyachtingcaraibes/" target="_blank" rel="noopener" aria-label="Instagram @poseidonyachtingcaraibes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm4.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1C3.9 5.1 5.2 3.8 7.9 3.7c1.1-.1 1.4-.1 4.1-.1ZM12 2c-2.7 0-3.1 0-4.2.1C4.2 2.2 2.2 4.2 2.1 7.8 2 8.9 2 9.3 2 12s0 3.1.1 4.2c.1 3.6 2.1 5.6 5.7 5.7 1.1.1 1.5.1 4.2.1s3.1 0 4.2-.1c3.6-.1 5.6-2.1 5.7-5.7.1-1.1.1-1.5.1-4.2s0-3.1-.1-4.2c-.1-3.6-2.1-5.6-5.7-5.7C15.1 2 14.7 2 12 2Z"/></svg></a>
+          <a id="lien-facebook" href="https://www.facebook.com/profile.php?id=61596115305865" target="_blank" rel="noopener" aria-label="Facebook Poseidon Yachting Caraïbes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a>
+        </div>
+        <p style="margin-top:10px;font-size:.88rem">@poseidonyachtingcaraibes</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Poseidon Yachting Caraïbes · Saint-Barthélemy</span>
+      <span data-i18n="ft_dist">Sublue et JetWave sont distribués par Poseidon Yachting</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var T={
+    en:{
+      bk_title:"Add toys to your boat", bk_intro:"Already booked your boat with Master Ski Pilou? Select it and pick your toys: we'll prepare everything and the gear will be waiting on board.",
+      f1:"Your boat", f2:"Your trip and toys", f3:"Your details", bt_see:"View boat", bt_other:"Other boat", bt_other_d:"add it in the comment",
+      l_date:"Trip date", l_type:"Duration", t_half:"Half day", t_full:"Full day", l_vapor:"Extra Vapor Pros", h_vapor:"1 Vapor Pro is already included on board",
+      l_efoil:"eFoil sessions (2 hrs)", l_total:"Estimated water toy total", l_name:"Full name", l_email:"Email", l_phone:"Phone / WhatsApp", l_msg:"Comment",
+      l_consent:"I agree that my details may be used to process my request.", b_send:"Send my request",
+      f_note:"You'll receive a copy by email. We confirm equipment availability within 24 hours.",
+      s_missing:"Please select a boat, a date, your name, a valid email and accept the consent box.", s_sending:"Sending…", s_ok:"Thank you! Your request has been sent. Check your inbox for the copy.", s_err:"Sending failed. Please email us at contact@poseidonyachtingcaraibes.com.", s_preview:"Preview: the form will send emails once the site is online. Your request:",
+      nav_prices:"Prices",
+      hero_title:"Electric water toys, delivered on board",
+      hero_lead:"Sublue Vapor Pro underwater scooters and JetWave eFoils for your boat days around St. Barts. Silent, gas-free and ready to ride the moment you drop anchor.",
+      cta_book:"Add toys to my boat", cta_prices:"See prices",
+      k1_t:"Vapor Pro included", k1_d:"One underwater scooter on every Master Ski Pilou boat",
+      k2_t:"2-hour eFoil sessions", k2_d:"Delivered and charged on board, half day or full day",
+      k3_t:"From Gustavia", k3_d:"Rue Jeanne d'Arc, Gustavia harbor",
+      vp_alt:"Sublue Vapor Pro underwater scooter on a boat deck",
+      vp_eye:"Underwater scooter",
+      vp_p:"Grab the handles and glide along the reefs of Colombier, Gouverneur or Shell Beach. The Vapor Pro takes minutes to learn, needs no license, and its screen shows speed, depth and remaining battery.",
+      vp_s1:"7.5 mph", vp_s1d:"12 km/h · 4 speeds", vp_s2:"up to 2 hrs", vp_s2d:"with 2 batteries",
+      vp_s3:"19 lb", vp_s3d:"easy to launch from the swim platform",
+      ef_alt:"Rider on a JetWave eFoil above the water",
+      ef_eye:"Electric hydrofoil board",
+      ef_p:"The board lifts above the water and glides in silence, with no wake and no engine noise. It comes on board for a 2-hour session at anchor. On a full-day trip, the battery is recharged at lunchtime on the boat's generator so you can ride again in the afternoon.",
+      ef_s1:"31 mph", ef_s1d:"50 km/h · top speed", ef_s2d:"per session, free midday recharge on full days",
+      ef_s3:"All levels", ef_s3d:"speed limiter for beginners, wireless remote",
+      pr_eye:"2026–2027 rates", pr_title:"Add toys to your boat rental",
+      pr_c1:"Water toy", pr_c2:"Half-day boat", pr_c3:"Full-day boat",
+      incl:"Included", pr_r1:"1 scooter and 2 batteries on every boat", pr_r1b:"+ 2 free batteries",
+      pr_r2:"Additional Vapor Pro", pr_r2d:"batteries supplied: 2 for a half day, 4 for a full day",
+      pr_r3d:"2-hour session with one battery", pr_r3b:"free midday recharge",
+      pr_note:"Prices per device, in euros. Water toys are booked together with your boat rental.",
+      bk_eye:"How to book", 
+      sc_alt:"Two instructors in the water with their JetWave eFoils",
+      sc_soon:"Coming soon", sc_title:"eFoil school by RIB",
+      sc_p:"Learn safely on a dedicated RIB outing with a certified, insured instructor, several boards and a small group.",
+      sc_l1:"Certified instructor with professional insurance", sc_l2:"Sheltered spots with calm water for your first take-off", sc_l3:"Details and early booking on request",
+      pa_eye:"Partner",
+      pa_p:"Our water toys equip the Master Ski Pilou fleet, specialists in captained boat rentals and private transfers between St. Barts, St. Martin and Anguilla.",
+      ft_follow:"Follow us", ft_dist:"Sublue and JetWave are distributed by Poseidon Yachting"
+    },
+    es:{
+      bk_title:"Añade tus juguetes a tu barco", bk_intro:"¿Ya reservaste tu barco con Master Ski Pilou? Márcalo y elige tus juguetes: lo preparamos todo y el equipo te espera a bordo.",
+      f1:"Tu barco", f2:"Tu salida y tus juguetes", f3:"Tus datos", bt_see:"Ver el barco", bt_other:"Otro barco", bt_other_d:"indícalo en el comentario",
+      l_date:"Fecha de la salida", l_type:"Duración", t_half:"Medio día", t_full:"Día completo", l_vapor:"Vapor Pro adicionales", h_vapor:"1 Vapor Pro ya está incluido a bordo",
+      l_efoil:"Sesiones de eFoil (2 h)", l_total:"Total estimado de juguetes", l_name:"Nombre y apellido", l_email:"Correo electrónico", l_phone:"Teléfono / WhatsApp", l_msg:"Comentario",
+      l_consent:"Acepto que mis datos se utilicen para gestionar mi solicitud.", b_send:"Enviar mi solicitud",
+      f_note:"Recibirás una copia por correo. Confirmamos la disponibilidad del equipo en 24 h.",
+      s_missing:"Selecciona un barco, una fecha, tu nombre, un correo válido y acepta la casilla de consentimiento.", s_sending:"Enviando…", s_ok:"¡Gracias! Tu solicitud se ha enviado. Revisa tu correo para ver la copia.", s_err:"Error de envío. Escríbenos a contact@poseidonyachtingcaraibes.com.", s_preview:"Vista previa: el formulario enviará los correos cuando el sitio esté en línea. Tu solicitud:",
+      nav_prices:"Tarifas",
+      hero_title:"Juguetes acuáticos eléctricos, entregados a bordo",
+      hero_lead:"Scooters submarinos Sublue Vapor Pro y eFoils JetWave para tus salidas en barco por San Bartolomé. Silenciosos, sin gasolina y listos para el agua en cuanto echas el ancla.",
+      cta_book:"Añadir juguetes a mi barco", cta_prices:"Ver tarifas",
+      k1_t:"Vapor Pro incluido", k1_d:"Un scooter submarino a bordo de cada barco de Master Ski Pilou",
+      k2_t:"Sesiones de eFoil de 2 h", k2_d:"Entregado y cargado a bordo, medio día o día completo",
+      k3_t:"Salida desde Gustavia", k3_d:"Rue Jeanne d'Arc, puerto de Gustavia",
+      vp_alt:"Scooter submarino Sublue Vapor Pro sobre la cubierta de un barco",
+      vp_eye:"Scooter submarino",
+      vp_p:"Agárrate a las empuñaduras y déjate llevar junto a los arrecifes de Colombier, Gouverneur o Shell Beach. El Vapor Pro se domina en pocos minutos, sin licencia, y su pantalla muestra la velocidad, la profundidad y la batería restante.",
+      vp_s1:"12 km/h", vp_s1d:"7,5 mph · 4 velocidades", vp_s2:"hasta 2 h", vp_s2d:"con 2 baterías",
+      vp_s3:"8,6 kg", vp_s3d:"fácil de meter al agua desde la plataforma de baño",
+      ef_alt:"Rider en eFoil JetWave sobre el agua",
+      ef_eye:"Tabla eléctrica con hidroala",
+      ef_p:"La tabla se eleva sobre el agua y se desliza en silencio, sin estela y sin ruido de motor. Se lleva a bordo para una sesión de 2 horas en el fondeo. En las salidas de día completo, la batería se recarga a mediodía con el generador del barco para volver a navegar por la tarde.",
+      ef_s1:"50 km/h", ef_s1d:"31 mph · velocidad máxima", ef_s2d:"por sesión, recarga de mediodía gratis en día completo",
+      ef_s3:"Todos los niveles", ef_s3d:"velocidad limitada para principiantes, mando inalámbrico",
+      pr_eye:"Tarifas 2026–2027", pr_title:"Añade tus juguetes al alquiler del barco",
+      pr_c1:"Juguete acuático", pr_c2:"Barco medio día", pr_c3:"Barco día completo",
+      incl:"Incluido", pr_r1:"1 scooter y 2 baterías a bordo de cada barco", pr_r1b:"+ 2 baterías gratis",
+      pr_r2:"Vapor Pro adicional", pr_r2d:"baterías incluidas: 2 en medio día, 4 en día completo",
+      pr_r3d:"sesión de 2 h con una batería", pr_r3b:"recarga de mediodía gratis",
+      pr_note:"Precios por equipo, en euros. Los juguetes acuáticos se reservan junto con el alquiler del barco.",
+      bk_eye:"Reservar", 
+      sc_alt:"Dos monitores en el agua con sus eFoils JetWave",
+      sc_soon:"Próximamente", sc_title:"Escuela de eFoil en semirrígida",
+      sc_p:"Para aprender con total seguridad: una salida dedicada en semirrígida con un monitor titulado y asegurado, varias tablas y un grupo reducido.",
+      sc_l1:"Monitor titulado, con seguro profesional", sc_l2:"Zonas resguardadas, agua tranquila para despegar", sc_l3:"Información y prerreserva bajo petición",
+      pa_eye:"Socio",
+      pa_p:"Nuestros juguetes acuáticos equipan la flota de Master Ski Pilou, especialista en alquiler de barcos con patrón y traslados privados entre San Bartolomé, San Martín y Anguila.",
+      ft_follow:"Síguenos", ft_dist:"Sublue y JetWave son distribuidos por Poseidon Yachting"
+    },
+    pt:{
+      bk_title:"Adicione os brinquedos ao seu barco", bk_intro:"Já reservou seu barco com a Master Ski Pilou? Marque-o e escolha seus brinquedos: preparamos tudo e o equipamento espera por você a bordo.",
+      f1:"Seu barco", f2:"Seu passeio e seus brinquedos", f3:"Seus dados", bt_see:"Ver o barco", bt_other:"Outro barco", bt_other_d:"informe no comentário",
+      l_date:"Data do passeio", l_type:"Duração", t_half:"Meio período", t_full:"Dia inteiro", l_vapor:"Vapor Pro adicionais", h_vapor:"1 Vapor Pro já está incluído a bordo",
+      l_efoil:"Sessões de eFoil (2 h)", l_total:"Total estimado dos brinquedos", l_name:"Nome completo", l_email:"E-mail", l_phone:"Telefone / WhatsApp", l_msg:"Comentário",
+      l_consent:"Aceito que meus dados sejam usados para processar minha solicitação.", b_send:"Enviar minha solicitação",
+      f_note:"Você receberá uma cópia por e-mail. Confirmamos a disponibilidade do equipamento em até 24 h.",
+      s_missing:"Selecione um barco, uma data, seu nome, um e-mail válido e marque a caixa de consentimento.", s_sending:"Enviando…", s_ok:"Obrigado! Sua solicitação foi enviada. Confira a cópia no seu e-mail.", s_err:"Falha no envio. Escreva para contact@poseidonyachtingcaraibes.com.", s_preview:"Prévia: o formulário enviará os e-mails quando o site estiver no ar. Sua solicitação:",
+      nav_prices:"Preços",
+      hero_title:"Brinquedos aquáticos elétricos, entregues a bordo",
+      hero_lead:"Scooters subaquáticos Sublue Vapor Pro e eFoils JetWave para seus passeios de barco em Saint-Barth. Silenciosos, sem combustível e prontos para a água assim que o barco ancora.",
+      cta_book:"Adicionar ao meu barco", cta_prices:"Ver preços",
+      k1_t:"Vapor Pro incluído", k1_d:"Um scooter subaquático a bordo de cada barco da Master Ski Pilou",
+      k2_t:"Sessões de eFoil de 2 h", k2_d:"Entregue e carregado a bordo, meio período ou dia inteiro",
+      k3_t:"Saída de Gustavia", k3_d:"Rue Jeanne d'Arc, porto de Gustavia",
+      vp_alt:"Scooter subaquático Sublue Vapor Pro no convés de um barco",
+      vp_eye:"Scooter subaquático",
+      vp_p:"Segure as alças e deixe-se levar ao longo dos recifes de Colombier, Gouverneur ou Shell Beach. O Vapor Pro se aprende em poucos minutos, sem habilitação, e a tela mostra a velocidade, a profundidade e a bateria restante.",
+      vp_s1:"12 km/h", vp_s1d:"7,5 mph · 4 velocidades", vp_s2:"até 2 h", vp_s2d:"com 2 baterias",
+      vp_s3:"8,6 kg", vp_s3d:"fácil de colocar na água pela plataforma de popa",
+      ef_alt:"Pessoa praticando eFoil JetWave acima da água",
+      ef_eye:"Prancha elétrica com hidrofólio",
+      ef_p:"A prancha se eleva acima da água e desliza em silêncio, sem marola e sem barulho de motor. Ela vai a bordo para uma sessão de 2 horas na ancoragem. Nos passeios de dia inteiro, a bateria é recarregada ao meio-dia no gerador do barco para você voltar à água à tarde.",
+      ef_s1:"50 km/h", ef_s1d:"31 mph · velocidade máxima", ef_s2d:"por sessão, recarga do meio-dia grátis no dia inteiro",
+      ef_s3:"Todos os níveis", ef_s3d:"velocidade limitada para iniciantes, controle sem fio",
+      pr_eye:"Preços 2026–2027", pr_title:"Adicione os brinquedos ao aluguel do barco",
+      pr_c1:"Brinquedo aquático", pr_c2:"Barco meio período", pr_c3:"Barco dia inteiro",
+      incl:"Incluído", pr_r1:"1 scooter e 2 baterias a bordo de cada barco", pr_r1b:"+ 2 baterias grátis",
+      pr_r2:"Vapor Pro adicional", pr_r2d:"baterias fornecidas: 2 no meio período, 4 no dia inteiro",
+      pr_r3d:"sessão de 2 h com uma bateria", pr_r3b:"recarga do meio-dia grátis",
+      pr_note:"Preços por equipamento, em euros. Os brinquedos aquáticos são reservados junto com o aluguel do barco.",
+      bk_eye:"Reservar", 
+      sc_alt:"Dois instrutores na água com seus eFoils JetWave",
+      sc_soon:"Em breve", sc_title:"Escola de eFoil em bote inflável",
+      sc_p:"Para aprender com toda a segurança: um passeio dedicado em bote inflável com instrutor certificado e segurado, várias pranchas e um grupo pequeno.",
+      sc_l1:"Instrutor certificado, com seguro profissional", sc_l2:"Locais abrigados, água calma para a primeira decolagem", sc_l3:"Informações e pré-reserva sob consulta",
+      pa_eye:"Parceiro",
+      pa_p:"Nossos brinquedos aquáticos equipam a frota da Master Ski Pilou, especialista em aluguel de barcos com capitão e traslados privados entre Saint-Barth, Saint-Martin e Anguilla.",
+      ft_follow:"Siga-nos", ft_dist:"Sublue e JetWave são distribuídos pela Poseidon Yachting"
+    }
+  };
+  var FRJS={s_missing:"Choisissez un bateau, une date, votre nom, un e-mail valide et cochez la case de consentement.", s_sending:"Envoi en cours…", s_ok:"Merci ! Votre demande est envoyée. Vous allez recevoir une copie par e-mail.", s_err:"L'envoi a échoué. Écrivez-nous à contact@poseidonyachtingcaraibes.com.", s_preview:"Aperçu : le formulaire enverra les e-mails une fois le site en ligne. Votre demande :"};
+  var CUR='fr';
+  function t(k){return (CUR!=='fr'&&T[CUR]&&T[CUR][k])||FRJS[k]||k;}
+  var root=document.documentElement, FR={}, FRALT={}, LANGTAG={fr:"fr",en:"en-US",es:"es",pt:"pt-BR"};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){FR[el.dataset.i18n]=el.textContent;});
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el){FRALT[el.dataset.i18nAlt]=el.alt;});
+  function setLang(l){
+    if(!LANGTAG[l])l='fr';
+    var d=T[l]||{};
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;el.textContent=(l==='fr'||!d[k])?FR[k]:d[k];});
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){var k=el.dataset.i18nAlt;el.alt=(l==='fr'||!d[k])?FRALT[k]:d[k];});
+    CUR=l;root.lang=LANGTAG[l];var fl=document.getElementById('f-lang');if(fl)fl.value=l;root.setAttribute('data-lang',l);
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');});
+    try{localStorage.setItem('pyc-lang',l);}catch(e){}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('pyc-lang');}catch(e){}
+  var h=location.hash.replace('#','');
+  if(LANGTAG[h])saved=h;
+  if(!saved){var n=(navigator.language||'fr').slice(0,2).toLowerCase();saved=LANGTAG[n]?n:'en';}
+  setLang(saved);
+  /* Formulaire de réservation */
+  var P={half:150,full:250,efoil:500};
+  var form=document.getElementById('resa');
+  function num(id){var v=parseInt(document.getElementById(id).value,10);return isNaN(v)||v<0?0:v;}
+  function calc(){
+    var type=form.querySelector('input[name=type]:checked').value;
+    var tot=num('f-vapor')*P[type]+num('f-efoil')*P.efoil;
+    document.getElementById('tot').textContent=tot.toLocaleString('fr-FR')+' €';
+    return tot;
+  }
+  form.querySelectorAll('[data-inc],[data-dec]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.dataset.inc||btn.dataset.dec, el=document.getElementById(id);
+      var v=num(id)+(btn.dataset.inc?1:-1);v=Math.max(+el.min,Math.min(+el.max,v));el.value=v;calc();
+    });
+  });
+  form.addEventListener('input',calc);form.addEventListener('change',calc);
+  try{var dt=new Date();document.getElementById('f-date').min=dt.toISOString().slice(0,10);}catch(e){}
+  /* Lien bateau : petite fenêtre */
+  document.querySelectorAll('[data-pop]').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      var w=null;try{w=window.open(a.href,'msp_boat','width=980,height=760,noopener=no');}catch(e){}
+      if(w){ev.preventDefault();try{w.focus();}catch(e){}}
+    });
+  });
+  var hl=document.createElement('input');hl.type='hidden';hl.name='lang';hl.id='f-lang';hl.value=CUR;form.appendChild(hl);
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var st=document.getElementById('f-status');
+    var fd=new FormData(form), boat=fd.get('boat'), email=(fd.get('email')||'').trim();
+    if(!boat||!fd.get('date')||!(fd.get('name')||'').trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||!document.getElementById('f-consent').checked){
+      st.textContent=t('s_missing');st.className='fstatus err';return;
+    }
+    fd.append('total',calc());
+    var live=/poseidonyachtingcaraibes\./.test(location.hostname);
+    if(!live){
+      st.className='fstatus ok';
+      st.textContent=t('s_preview')+' '+boat+' · '+fd.get('date')+' · Vapor +'+num('f-vapor')+' · eFoil '+num('f-efoil')+' · '+document.getElementById('tot').textContent;
+      return;
+    }
+    st.textContent=t('s_sending');st.className='fstatus';
+    fetch('send.php',{method:'POST',body:fd}).then(function(r){return r.json();}).then(function(j){
+      if(j&&j.ok){st.textContent=t('s_ok');st.className='fstatus ok';form.reset();calc();}
+      else{st.textContent=t('s_err');st.className='fstatus err';}
+    }).catch(function(){st.textContent=t('s_err');st.className='fstatus err';});
+  });
+  calc();
+
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set);});});
+})();
+</script>
+</body>
+</html>
