@@ -181,6 +181,18 @@ footer p{margin-bottom:8px}
 .send .btn{border:0;cursor:pointer;font-family:var(--font-body)}
 .fstatus{font-size:.92rem;margin:0}
 .fstatus.ok{color:#1E6B3A}.fstatus.err{color:var(--red)}
+
+/* Onglets marques */
+nav a.on{color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
+nav a.nb{background:var(--red);color:var(--white);padding:8px 16px;border-radius:4px}
+nav a.nb:hover{background:#9C2025;color:var(--white)}
+.tabs{display:none;border-top:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.tabs .wrap{display:flex;gap:22px;padding-top:10px;padding-bottom:10px}
+.tabs a{text-decoration:none;font-weight:600;font-size:.88rem;color:var(--ink)}
+.tabs a.on{color:var(--red)}
+@media (max-width:980px){.tabs{display:block}nav a.nb{display:none}}
+.more{font-size:.9rem}
+.alt .soon{border-color:var(--red);color:var(--red)}
 </style>
 </head>
 <body>
@@ -192,10 +204,11 @@ footer p{margin-bottom:8px}
       <span>Poseidon Yachting<small>Caraïbes</small></span>
     </a>
     <nav aria-label="Navigation">
-      <a class="nl" href="#vapor">Vapor Pro</a>
-      <a class="nl" href="#efoil">eFoil</a>
+      <a class="nl" href="vapor-pro.html">Vapor Pro</a>
+      <a class="nl" href="jetwave.html">JetWave</a>
+      <a class="nl" href="momentum.html">Momentum</a>
       <a class="nl" href="#tarifs" data-i18n="nav_prices">Tarifs</a>
-      <a class="nl" href="#contact">Contact</a>
+      <a class="nb" href="#reserver" data-i18n="nav_book">Réserver</a>
       <div class="lang" role="group" aria-label="Langue / Language / Idioma / Idioma">
         <button type="button" id="btn-fr" data-set="fr" aria-label="Français" aria-pressed="true" title="Français"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></button>
         <button type="button" id="btn-en" data-set="en" aria-label="English (US)" aria-pressed="false" title="English (US)"><svg class="flag" viewBox="0 0 19 10" aria-hidden="true"><rect width="19" height="10" fill="#B22234"/><g fill="#fff"><rect y="0.77" width="19" height="0.77"/><rect y="2.31" width="19" height="0.77"/><rect y="3.85" width="19" height="0.77"/><rect y="5.38" width="19" height="0.77"/><rect y="6.92" width="19" height="0.77"/><rect y="8.46" width="19" height="0.77"/></g><rect width="7.6" height="5.38" fill="#3C3B6E"/><g fill="#fff"><circle cx="1.3" cy="1.1" r=".35"/><circle cx="3.8" cy="1.1" r=".35"/><circle cx="6.3" cy="1.1" r=".35"/><circle cx="2.55" cy="2.7" r=".35"/><circle cx="5.05" cy="2.7" r=".35"/><circle cx="1.3" cy="4.3" r=".35"/><circle cx="3.8" cy="4.3" r=".35"/><circle cx="6.3" cy="4.3" r=".35"/></g></svg></button>
@@ -203,6 +216,15 @@ footer p{margin-bottom:8px}
         <button type="button" id="btn-pt" data-set="pt" aria-label="Português (Brasil)" aria-pressed="false" title="Português (Brasil)"><svg class="flag" viewBox="0 0 10 7" aria-hidden="true"><rect width="10" height="7" fill="#009C3B"/><path d="M5 .8 9.2 3.5 5 6.2 .8 3.5Z" fill="#FFDF00"/><circle cx="5" cy="3.5" r="1.75" fill="#002776"/><path d="M3.3 3.2q1.8-.5 3.4.6" stroke="#fff" stroke-width=".25" fill="none"/></svg></button>
       </div>
     </nav>
+  </div>
+  <div class="tabs" aria-label="Navigation">
+    <div class="wrap">
+      <a class="" href="vapor-pro.html">Vapor Pro</a>
+      <a class="" href="jetwave.html">JetWave</a>
+      <a class="" href="momentum.html">Momentum</a>
+      <a class="" href="#tarifs" data-i18n="nav_prices">Tarifs</a>
+      <a href="#reserver" data-i18n="nav_book">Réserver</a>
+    </div>
   </div>
 </header>
 
@@ -241,6 +263,7 @@ footer p{margin-bottom:8px}
         <div class="spec"><b data-i18n="vp_s3">8,6 kg</b><span data-i18n="vp_s3d">facile à mettre à l'eau depuis la plage arrière</span></div>
       </div>
       <p class="brandline">Sublue · Power Xtreme</p>
+      <p class="more"><a href="vapor-pro.html" data-i18n="vp_more">Découvrir le Vapor Pro et la marque Sublue →</a></p>
     </div>
   </div>
 </section>
@@ -258,6 +281,7 @@ footer p{margin-bottom:8px}
         <div class="spec"><b data-i18n="ef_s3">Tous niveaux</b><span data-i18n="ef_s3d">vitesse limitée pour débuter, télécommande sans fil</span></div>
       </div>
       <p class="brandline">JetWave eFoil</p>
+      <p class="more"><a href="jetwave.html" data-i18n="ef_more">Découvrir JetWave et toute la gamme →</a></p>
     </div>
   </div>
 </section>
@@ -384,6 +408,18 @@ footer p{margin-bottom:8px}
   </div>
 </section>
 
+<section class="alt" id="momentum">
+  <div class="wrap split">
+    <div class="media"><img src="img/momentum/g1.jpg" alt="Annexe semi-rigide propulsée par un moteur électrique Momentum M10" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow" data-i18n="mo_eye">Aussi chez Poseidon Yachting Caraïbes</div>
+      <h2 data-i18n="mo_title">Moteurs électriques Momentum pour annexes</h2>
+      <p data-i18n="mo_p">Hors-bord électriques M10 (10 kW) et U2 (2,5 kW), silencieux et sans essence. À la vente uniquement, pas en location.</p>
+      <div class="cta"><a class="btn btn-red" href="momentum.html" data-i18n="mo_btn">Découvrir Momentum</a></div>
+    </div>
+  </div>
+</section>
+
 <section class="partner">
   <div class="wrap">
     <img src="img/masterski-pilou.png" alt="Master Ski Pilou">
@@ -417,7 +453,7 @@ footer p{margin-bottom:8px}
     </div>
     <div class="legal">
       <span>© 2026 Poseidon Yachting Caraïbes · Saint-Barthélemy</span>
-      <span data-i18n="ft_dist">Sublue et JetWave sont distribués par Poseidon Yachting</span>
+      <span data-i18n="ft_dist">Sublue, JetWave et Momentum sont distribués par Poseidon Yachting</span>
     </div>
   </div>
 </footer>
@@ -463,7 +499,7 @@ footer p{margin-bottom:8px}
       sc_l1:"Certified instructor with professional insurance", sc_l2:"Sheltered spots with calm water for your first take-off", sc_l3:"Details and early booking on request",
       pa_eye:"Partner",
       pa_p:"Our water toys equip the Master Ski Pilou fleet, specialists in captained boat rentals and private transfers between St. Barts, St. Martin and Anguilla.",
-      ft_follow:"Follow us", ft_dist:"Sublue and JetWave are distributed by Poseidon Yachting"
+      ft_follow:"Follow us", ft_dist:"Sublue, JetWave and Momentum are distributed by Poseidon Yachting", nav_book:"Book", vp_more:"Discover the Vapor Pro and the Sublue brand →", ef_more:"Discover JetWave and the full lineup →", mo_eye:"Also at Poseidon Yachting Caraïbes", mo_title:"Momentum electric outboards for tenders", mo_p:"M10 (10 kW) and U2 (2.5 kW) electric outboards, silent and gas-free. For sale only, not available to rent.", mo_btn:"Discover Momentum"
     },
     es:{
       bk_title:"Añade tus juguetes a tu barco", bk_intro:"¿Ya reservaste tu barco con Master Ski Pilou? Márcalo y elige tus juguetes: lo preparamos todo y el equipo te espera a bordo.",
@@ -503,7 +539,7 @@ footer p{margin-bottom:8px}
       sc_l1:"Monitor titulado, con seguro profesional", sc_l2:"Zonas resguardadas, agua tranquila para despegar", sc_l3:"Información y prerreserva bajo petición",
       pa_eye:"Socio",
       pa_p:"Nuestros juguetes acuáticos equipan la flota de Master Ski Pilou, especialista en alquiler de barcos con patrón y traslados privados entre San Bartolomé, San Martín y Anguila.",
-      ft_follow:"Síguenos", ft_dist:"Sublue y JetWave son distribuidos por Poseidon Yachting"
+      ft_follow:"Síguenos", ft_dist:"Sublue, JetWave y Momentum son distribuidos por Poseidon Yachting", nav_book:"Reservar", vp_more:"Descubra el Vapor Pro y la marca Sublue →", ef_more:"Descubra JetWave y toda la gama →", mo_eye:"También en Poseidon Yachting Caraïbes", mo_title:"Motores eléctricos Momentum para auxiliares", mo_p:"Fuerabordas eléctricos M10 (10 kW) y U2 (2,5 kW), silenciosos y sin gasolina. Solo a la venta, no en alquiler.", mo_btn:"Descubrir Momentum"
     },
     pt:{
       bk_title:"Adicione os brinquedos ao seu barco", bk_intro:"Já reservou seu barco com a Master Ski Pilou? Marque-o e escolha seus brinquedos: preparamos tudo e o equipamento espera por você a bordo.",
@@ -543,7 +579,7 @@ footer p{margin-bottom:8px}
       sc_l1:"Instrutor certificado, com seguro profissional", sc_l2:"Locais abrigados, água calma para a primeira decolagem", sc_l3:"Informações e pré-reserva sob consulta",
       pa_eye:"Parceiro",
       pa_p:"Nossos brinquedos aquáticos equipam a frota da Master Ski Pilou, especialista em aluguel de barcos com capitão e traslados privados entre Saint-Barth, Saint-Martin e Anguilla.",
-      ft_follow:"Siga-nos", ft_dist:"Sublue e JetWave são distribuídos pela Poseidon Yachting"
+      ft_follow:"Siga-nos", ft_dist:"Sublue, JetWave e Momentum são distribuídos pela Poseidon Yachting", nav_book:"Reservar", vp_more:"Conheça o Vapor Pro e a marca Sublue →", ef_more:"Conheça a JetWave e toda a linha →", mo_eye:"Também na Poseidon Yachting Caraïbes", mo_title:"Motores elétricos Momentum para botes de apoio", mo_p:"Motores de popa elétricos M10 (10 kW) e U2 (2,5 kW), silenciosos e sem gasolina. Somente à venda, não para aluguel.", mo_btn:"Conhecer a Momentum"
     }
   };
   var FRJS={s_missing:"Choisissez un bateau, une date, votre nom, un e-mail valide et cochez la case de consentement.", s_sending:"Envoi en cours…", s_ok:"Merci ! Votre demande est envoyée. Vous allez recevoir une copie par e-mail.", s_err:"L'envoi a échoué. Écrivez-nous à contact@poseidonyachtingcaraibes.com.", s_preview:"Aperçu : le formulaire enverra les e-mails une fois le site en ligne. Votre demande :"};

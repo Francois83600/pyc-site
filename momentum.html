@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moteurs électriques Momentum – Poseidon Yachting Caraïbes</title>
+<meta name="description" content="Moteurs hors-bord électriques Momentum M10 et U2 en vente à Saint-Barthélemy, pour annexes de yachts et semi-rigides.">
+<meta property="og:image" content="https://www.poseidonyachtingcaraibes.com/img/momentum/hero.jpg">
+<link rel="icon" href="img/logo-cercle.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palette tirée du logo : bleu marine du cercle, rouge Poseidon, gris trident, sable des plages */
+  --navy:#1C2C5B;
+  --navy-deep:#111C3D;
+  --red:#B8292F;
+  --silver:#8E9196;
+  --sand:#F4F1EA;
+  --ink:#1A1F2B;
+  --white:#FFFFFF;
+  --line:#DCD8CE;
+  --font-display:"Josefin Sans","Gill Sans","Trebuchet MS",sans-serif;
+  --font-body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  /* Mise en page : bandeau photo, puis sections alternées texte / image, tarifs en tableau, réservation en 3 étapes */
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,3.2vw,2.5rem);color:var(--navy);letter-spacing:.02em}
+h3{font-size:1.25rem;color:var(--navy);letter-spacing:.03em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--font-display);font-weight:600;font-size:.82rem;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+
+
+/* En-tête */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:58px;height:58px}
+.brand span{font-family:var(--font-display);font-weight:700;color:var(--navy);letter-spacing:.14em;font-size:.95rem;line-height:1.2;text-transform:uppercase}
+.brand small{display:block;font-weight:400;color:var(--silver);letter-spacing:.3em;font-size:.72rem}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;font-weight:500;font-size:.92rem;color:var(--ink)}
+nav a:hover{color:var(--red)}
+.lang{display:flex;border:1px solid var(--navy);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;font:600 .74rem var(--font-body);padding:6px 9px;cursor:pointer;color:var(--navy);letter-spacing:.06em;display:inline-flex;align-items:center;gap:5px}
+.flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+.lang button[aria-pressed="true"]{background:var(--navy);color:var(--white)}
+@media (max-width:980px){nav .nl{display:none}}
+@media (max-width:520px){.brand span{display:none}.lang button span{display:none}.lang button{padding:7px 8px}}
+
+/* Bandeau */
+.hero{position:relative;color:var(--white);background:var(--navy-deep) url("img/hero-efoil.jpg") center 62%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,28,61,.88) 0%,rgba(17,28,61,.55) 48%,rgba(17,28,61,.05) 100%)}
+.hero .wrap{position:relative;padding-top:96px;padding-bottom:104px}
+.hero .eyebrow{color:#F3B7B9}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);max-width:15ch;margin:14px 0 20px;letter-spacing:.01em}
+.hero p.lead{max-width:52ch;font-size:1.08rem;color:#E4E8F2}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:4px;letter-spacing:.03em}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:#9C2025}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.8);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* Bande de points clés */
+.keys{background:var(--navy);color:var(--white)}
+.keys .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.key{padding:26px 24px;border-left:1px solid rgba(255,255,255,.15)}
+.key:first-child{border-left:0}
+.key b{display:block;font-family:var(--font-display);font-size:1.15rem;letter-spacing:.04em}
+.key span{color:#C6CCDB;font-size:.9rem}
+@media (max-width:760px){.keys .wrap{grid-template-columns:1fr}.key{border-left:0;border-top:1px solid rgba(255,255,255,.15)}.key:first-child{border-top:0}}
+
+/* Sections produit */
+section{padding:88px 0}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.split.rev .media{order:2}
+.media img{width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:6px}
+.copy{display:grid;gap:18px}
+.copy p{max-width:58ch;color:#3A4152}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.spec{border-top:3px solid var(--navy);padding-top:10px}
+.spec b{display:block;font-family:var(--font-display);font-size:1.45rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.spec span{font-size:.82rem;color:var(--silver);line-height:1.35;display:block}
+.brandline{font-size:.8rem;color:var(--silver);letter-spacing:.06em}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}.split.rev .media{order:0}section{padding:64px 0}}
+.alt{background:var(--sand)}
+
+/* Tarifs */
+.tarifs table{width:100%;border-collapse:collapse;margin-top:28px;background:var(--white);font-variant-numeric:tabular-nums}
+.tarifs th,.tarifs td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.tarifs thead th{font-family:var(--font-display);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--silver);font-weight:600}
+.tarifs td.price{font-family:var(--font-display);font-weight:700;font-size:1.3rem;color:var(--navy);white-space:nowrap}
+.tarifs th small{display:block;color:var(--silver);font-size:.84rem;margin-top:4px;font-weight:400}
+.tarifs td small{display:block;color:var(--silver);font-size:.84rem;margin-top:4px}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--navy);color:var(--white);padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.tablebox{overflow-x:auto}
+.note{margin-top:14px;font-size:.86rem;color:var(--silver)}
+
+/* Étapes */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:28px}
+.step .n{font-family:var(--font-display);font-weight:700;font-size:2.4rem;color:var(--red);line-height:1}
+.step h3{margin:12px 0 8px}
+.step p{color:#3A4152;font-size:.95rem}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* École */
+.ecole{background:var(--navy-deep);color:var(--white)}
+.ecole h2{color:var(--white)}
+.ecole .copy p{color:#C6CCDB}
+.ecole ul{margin:0;padding-left:20px;color:#E4E8F2;display:grid;gap:6px}
+.soon{display:inline-block;border:1px solid #F3B7B9;color:#F3B7B9;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;border-radius:3px;font-weight:600;justify-self:start}
+
+/* Partenaire */
+.partner .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.partner img{width:230px;height:auto;background:var(--navy);padding:22px 26px;border-radius:6px}
+.partner p{max-width:62ch;color:#3A4152}
+
+/* Contact & pied */
+footer{background:var(--navy);color:#D5DAE6;padding:64px 0 28px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer img.logo{width:240px}
+footer h3{color:var(--white);font-size:1rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+footer a{color:var(--white)}
+footer p{margin-bottom:8px}
+.social{display:flex;gap:12px;margin-top:6px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.4);border-radius:50%}
+.social a:hover{background:rgba(255,255,255,.12)}
+.social svg{width:20px;height:20px;fill:var(--white)}
+.legal{border-top:1px solid rgba(255,255,255,.15);margin-top:44px;padding-top:20px;font-size:.8rem;color:#9AA3BA;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:860px){.foot{grid-template-columns:1fr}}
+
+/* Formulaire de réservation */
+.intro{max-width:62ch;color:#3A4152;margin-top:12px}
+.resa{margin-top:32px;display:grid;gap:22px}
+.resa fieldset{border:1px solid var(--line);border-radius:8px;background:var(--white);padding:24px;margin:0;min-width:0}
+.resa legend{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;color:var(--navy);font-size:1.1rem;letter-spacing:.03em;padding:0 8px}
+.resa legend .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--red);color:var(--white);font-size:.95rem}
+.boats{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:8px}
+.boat{position:relative;display:flex;flex-direction:column;gap:2px;border:1.5px solid var(--line);border-radius:6px;padding:12px 12px 10px 38px;cursor:pointer;background:var(--white);transition:border-color .15s,background .15s}
+.boat:hover{border-color:var(--silver)}
+.boat input{position:absolute;left:12px;top:14px;accent-color:var(--red);width:16px;height:16px;margin:0}
+.boat .bn{font-weight:600;color:var(--navy)}
+.boat small{color:var(--silver);font-size:.78rem;letter-spacing:.04em}
+.boat .see{font-size:.8rem;margin-top:4px;color:var(--red);text-decoration:underline;align-self:flex-start}
+.boat:has(input:checked){border-color:var(--navy);background:#EEF1F8}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;align-content:start}
+.field label,.field .lab{font-weight:600;font-size:.88rem;color:var(--ink)}
+.field small{color:var(--silver);font-size:.8rem}
+.resa input[type=text],.resa input[type=email],.resa input[type=tel],.resa input[type=date],.resa input[type=number]{font:inherit;border:1.5px solid var(--line);border-radius:6px;padding:11px 12px;background:var(--white);color:var(--ink);width:100%}
+.resa input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(28,44,91,.15)}
+.seg{display:flex;border:1.5px solid var(--line);border-radius:6px;overflow:hidden}
+.seg label{flex:1;position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0}
+.seg span{display:block;text-align:center;padding:11px 8px;font-weight:500}
+.seg input:checked+span{background:var(--navy);color:var(--white)}
+.seg input:focus-visible+span{outline:3px solid var(--red);outline-offset:-3px}
+.step-in{display:flex;align-items:stretch;max-width:180px}
+.step-in button{width:44px;border:1.5px solid var(--line);background:var(--sand);font-size:1.2rem;cursor:pointer;color:var(--navy)}
+.step-in button:first-child{border-radius:6px 0 0 6px}.step-in button:last-child{border-radius:0 6px 6px 0}
+.step-in input{text-align:center;border-radius:0!important;border-left:0!important;border-right:0!important;-moz-appearance:textfield}
+.step-in input::-webkit-inner-spin-button{-webkit-appearance:none}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.total b{font-family:var(--font-display);font-size:1.6rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.88rem;color:#3A4152}
+.consent input{margin-top:3px;accent-color:var(--red)}
+.send{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.send .btn{border:0;cursor:pointer;font-family:var(--font-body)}
+.fstatus{font-size:.92rem;margin:0}
+.fstatus.ok{color:#1E6B3A}.fstatus.err{color:var(--red)}
+
+/* Onglets marques */
+nav a.on{color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
+nav a.nb{background:var(--red);color:var(--white);padding:8px 16px;border-radius:4px}
+nav a.nb:hover{background:#9C2025;color:var(--white)}
+.tabs{display:none;border-top:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.tabs .wrap{display:flex;gap:22px;padding-top:10px;padding-bottom:10px}
+.tabs a{text-decoration:none;font-weight:600;font-size:.88rem;color:var(--ink)}
+.tabs a.on{color:var(--red)}
+@media (max-width:980px){.tabs{display:block}nav a.nb{display:none}}
+.more{font-size:.9rem}
+.alt .soon{border-color:var(--red);color:var(--red)}
+
+/* Pages marques */
+.phero{position:relative;color:var(--white);background:var(--navy-deep) center/cover no-repeat}
+.phero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,28,61,.9) 0%,rgba(17,28,61,.55) 50%,rgba(17,28,61,.1) 100%)}
+.phero .wrap{position:relative;padding-top:92px;padding-bottom:96px}
+.phero .eyebrow{color:#F3B7B9}
+.phero h1{font-size:clamp(2.3rem,5.4vw,4rem);margin:14px 0 18px;max-width:16ch}
+.phero p.lead{max-width:56ch;font-size:1.08rem;color:#E4E8F2}
+.salebadge{display:inline-block;margin-top:22px;background:var(--white);color:var(--red);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:4px}
+.kpis .wrap{grid-template-columns:repeat(4,1fr)}
+@media (max-width:860px){.kpis .wrap{grid-template-columns:1fr 1fr}.kpis .key:nth-child(3){border-left:0}}
+@media (max-width:520px){.kpis .wrap{grid-template-columns:1fr}.kpis .key{border-left:0}}
+.ticks{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.ticks li{position:relative;padding-left:26px;color:#3A4152}
+.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr}}
+.vids{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+.vids video{width:min(300px,100%);aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:#000}
+.vids video.r45{aspect-ratio:4/5;width:min(360px,100%)}
+.yt{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+@media (max-width:860px){.yt{grid-template-columns:1fr}}
+.ytc button{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;cursor:pointer;border-radius:8px;overflow:hidden;background:#000}
+.ytc button img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.ytc button span{position:absolute;inset:0;margin:auto;width:68px;height:48px;border-radius:12px;background:var(--red)}
+.ytc button span::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff}
+.ytc iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px}
+.ytc p{margin-top:10px;font-weight:600;color:var(--navy);font-size:.95rem}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:28px;display:grid;gap:14px;align-content:start}
+.card .sub{font-family:var(--font-display);color:var(--red);font-weight:600;letter-spacing:.06em}
+.adv{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+@media (max-width:860px){.adv{grid-template-columns:1fr}}
+.adv div{border-top:3px solid var(--navy);padding-top:12px}
+.adv b{font-family:var(--font-display);color:var(--navy);font-size:1.1rem;display:block;margin-bottom:6px}
+.adv span{color:#3A4152;font-size:.95rem}
+.range td,.range th{padding:14px 16px}
+.lvl{display:inline-block;font-size:.75rem;font-weight:600;padding:3px 8px;border-radius:3px;background:var(--sand);color:var(--navy)}
+.more{font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Poseidon Yachting Caraïbes">
+      <img src="img/logo-cercle.png" alt="">
+      <span>Poseidon Yachting<small>Caraïbes</small></span>
+    </a>
+    <nav aria-label="Navigation">
+      <a class="nl" href="vapor-pro.html">Vapor Pro</a>
+      <a class="nl" href="jetwave.html">JetWave</a>
+      <a class="nl on" href="momentum.html" aria-current="page">Momentum</a>
+      <a class="nl" href="index.html#tarifs" data-i18n="nav_prices">Tarifs</a>
+      <a class="nb" href="index.html#reserver" data-i18n="nav_book">Réserver</a>
+      <div class="lang" role="group" aria-label="Langue / Language / Idioma / Idioma">
+        <button type="button" id="btn-fr" data-set="fr" aria-label="Français" aria-pressed="true" title="Français"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></button>
+        <button type="button" id="btn-en" data-set="en" aria-label="English (US)" aria-pressed="false" title="English (US)"><svg class="flag" viewBox="0 0 19 10" aria-hidden="true"><rect width="19" height="10" fill="#B22234"/><g fill="#fff"><rect y="0.77" width="19" height="0.77"/><rect y="2.31" width="19" height="0.77"/><rect y="3.85" width="19" height="0.77"/><rect y="5.38" width="19" height="0.77"/><rect y="6.92" width="19" height="0.77"/><rect y="8.46" width="19" height="0.77"/></g><rect width="7.6" height="5.38" fill="#3C3B6E"/><g fill="#fff"><circle cx="1.3" cy="1.1" r=".35"/><circle cx="3.8" cy="1.1" r=".35"/><circle cx="6.3" cy="1.1" r=".35"/><circle cx="2.55" cy="2.7" r=".35"/><circle cx="5.05" cy="2.7" r=".35"/><circle cx="1.3" cy="4.3" r=".35"/><circle cx="3.8" cy="4.3" r=".35"/><circle cx="6.3" cy="4.3" r=".35"/></g></svg></button>
+        <button type="button" id="btn-es" data-set="es" aria-label="Español" aria-pressed="false" title="Español"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y=".5" width="3" height="1" fill="#F1BF00"/></svg></button>
+        <button type="button" id="btn-pt" data-set="pt" aria-label="Português (Brasil)" aria-pressed="false" title="Português (Brasil)"><svg class="flag" viewBox="0 0 10 7" aria-hidden="true"><rect width="10" height="7" fill="#009C3B"/><path d="M5 .8 9.2 3.5 5 6.2 .8 3.5Z" fill="#FFDF00"/><circle cx="5" cy="3.5" r="1.75" fill="#002776"/><path d="M3.3 3.2q1.8-.5 3.4.6" stroke="#fff" stroke-width=".25" fill="none"/></svg></button>
+      </div>
+    </nav>
+  </div>
+  <div class="tabs" aria-label="Navigation">
+    <div class="wrap">
+      <a class="" href="vapor-pro.html">Vapor Pro</a>
+      <a class="" href="jetwave.html">JetWave</a>
+      <a class="on" href="momentum.html">Momentum</a>
+      <a class="" href="index.html#tarifs" data-i18n="nav_prices">Tarifs</a>
+      <a href="index.html#reserver" data-i18n="nav_book">Réserver</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="phero" style="background-image:url('img/momentum/hero.jpg')">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="h_eye">Momentum Electric Marine · Hors-bord électrique</div>
+    <h1 data-i18n="h_title">Moteurs Momentum</h1>
+    <p class="lead" data-i18n="h_lead">Le hors-bord électrique pensé pour les annexes de yachts : puissant, silencieux, sans essence à bord. Disponible à la vente à St Barth, avec conseil et mise en service.</p>
+    <div class="salebadge" data-i18n="sale">À la vente uniquement · pas de location</div>
+    <div class="cta">
+      <a class="btn btn-red" href="mailto:contact@poseidonyachtingcaraibes.com?subject=Devis%20moteur%20Momentum"><span data-i18n="cta1">Demander un devis</span></a>
+      <a class="btn btn-ghost" href="#videos"><span data-i18n="cta2">Voir les vidéos</span></a>
+    </div>
+  </div>
+</div>
+<div class="keys kpis">
+  <div class="wrap">
+    <div class="key"><b data-i18n="k1">10 kW</b><span data-i18n="k1d">M10, équivalent 15 à 20 CV</span></div>
+    <div class="key"><b data-i18n="k2">22 kg</b><span data-i18n="k2d">le M10 se porte à la main</span></div>
+    <div class="key"><b data-i18n="k3">30 km/h</b><span data-i18n="k3d">en semi-rigide de 3,40 m à 3 personnes</span></div>
+    <div class="key"><b data-i18n="k4">METS 2024</b><span data-i18n="k4d">nommé parmi les meilleurs designs innovants</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div class="media"><img src="img/momentum/g2.jpg" alt="Pilote sur une annexe équipée d'un moteur Momentum M10" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow" data-i18n="b_eye">La marque</div>
+      <h2 data-i18n="b_title">Pourquoi Momentum ?</h2>
+      <p data-i18n="b_p1">Momentum Electric Marine veut rendre la navigation puissante, silencieuse et simple. Dès sa première année sur le marché, le M10 a été nommé dans la catégorie des meilleurs designs innovants au METS Trade 2024, l'un des principaux salons professionnels du nautisme.</p>
+      <p data-i18n="b_p2">Le M10 est le plus léger de sa catégorie et le seul 10 kW conçu pour être porté à la main. Son support de tableau arrière se verrouille en un clic : on laisse la fixation sur l'annexe et on emporte le moteur. Poseidon Yachting est le distributeur exclusif de Momentum en Europe.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="adv">
+      <div><b data-i18n="a1">Électrique et silencieux</b><span data-i18n="a1d">Propulsion instantanée, aucune nuisance sonore au mouillage.</span></div>
+      <div><b data-i18n="a2">Sans essence</b><span data-i18n="a2d">On recharge à quai, sur le groupe du yacht ou au solaire.</span></div>
+      <div><b data-i18n="a3">Sécurité</b><span data-i18n="a3d">Interface CAN-Bus, coupe-circuit magnétique, connecteurs étanches.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="m_eye">La gamme</div>
+    <h2 style="margin-top:10px"><span data-i18n="m_title">Deux moteurs, du semi-rigide à l'annexe légère</span></h2>
+    <div class="cards">
+      <div class="card">
+        <h3 data-i18n="m10_t">Momentum M10</h3>
+        <div class="sub" data-i18n="m10_s">10 kW · équivalent 15 à 20 CV</div>
+        <p data-i18n="m10_p">Pour les semi-rigides et annexes jusqu'aux sorties rapides : jusqu'à 30 km/h, ou 18 h de navigation à 6 km/h.</p>
+        <ul class="ticks">
+          <li data-i18n="m10_l1">Moteur 22 à 24 kg, arbre court, long ou extra-long</li>
+          <li data-i18n="m10_l2">Batterie MB-6 : 6,8 kWh, 72 V, 1 500 cycles</li>
+          <li data-i18n="m10_l3">Support à 5 positions de trim, compatible direction déportée</li>
+          <li data-i18n="m10_l4">Livré complet : batterie, chargeur, câble, support, leash</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="u2_t">Momentum U2</h3>
+        <div class="sub" data-i18n="u2_s">2,5 kW · équivalent 5 CV</div>
+        <p data-i18n="u2_p">Pour les annexes légères et les voiliers : 9 kg seulement, batterie amovible avec ordinateur de bord et GPS.</p>
+        <ul class="ticks">
+          <li data-i18n="u2_l1">Batterie 1,4 kWh, 48 V, 8 kg, 1 000 cycles</li>
+          <li data-i18n="u2_l2">Jusqu'à 15 km/h, ou 7 h 30 de navigation à 5,7 km/h</li>
+          <li data-i18n="u2_l3">Barre franche repliable, plaque anti-ventilation de série</li>
+          <li data-i18n="u2_l4">Garantie 3 ans · extension 3 kW prévue au printemps 2027</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" data-i18n="perf_note">Performances mesurées par le fabricant sur un semi-rigide de 3,40 m (3 personnes pour le M10, 1 personne pour le U2).</p>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap">
+    <h2 data-i18n="v_title">En vidéo</h2>
+    <div class="yt">
+      <div class="ytc"><button type="button" data-id="AcIWUvTGzHc" aria-label="Lire la vidéo : Premier essai en mer : deux M10 en bimoteur"><img src="https://i.ytimg.com/vi/AcIWUvTGzHc/hqdefault.jpg" alt="" loading="lazy"><span></span></button><p data-i18n="vid1">Premier essai en mer : deux M10 en bimoteur</p></div>
+      <div class="ytc"><button type="button" data-id="2aykPXWDOOo" aria-label="Lire la vidéo : Présentation du U2"><img src="https://i.ytimg.com/vi/2aykPXWDOOo/hqdefault.jpg" alt="" loading="lazy"><span></span></button><p data-i18n="vid2">Présentation du U2</p></div>
+      <div class="ytc"><button type="button" data-id="a5sv6uQbHFo" aria-label="Lire la vidéo : Deux M10 tractent un wakeboarder"><img src="https://i.ytimg.com/vi/a5sv6uQbHFo/hqdefault.jpg" alt="" loading="lazy"><span></span></button><p data-i18n="vid3">Deux M10 tractent un wakeboarder</p></div>
+    </div>
+  <h2 style="margin-top:56px"><span data-i18n="g_title">En images</span></h2>
+  <div class="gallery">
+    <img src="img/momentum/g1.jpg" alt="Annexe semi-rigide propulsée par un Momentum M10" loading="lazy">
+    <img src="img/momentum/g2.jpg" alt="Pilote souriant sur une annexe équipée Momentum" loading="lazy">
+    <img src="img/momentum/g3.jpg" alt="Annexe Momentum en navigation" loading="lazy">
+    <img src="img/momentum/g4.jpg" alt="Détail du moteur M10 en marche" loading="lazy">
+    <img src="img/momentum/g5.jpg" alt="Semi-rigide Momentum dans le sillage" loading="lazy">
+    <img src="img/momentum/g6.jpg" alt="Moteur Momentum U2 monté sur une annexe" loading="lazy">
+  </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split rev">
+    <div class="media"><img src="img/momentum/hero.jpg" alt="Yacht et son annexe équipée d'un moteur Momentum" loading="lazy"></div>
+    <div class="copy">
+      <div class="eyebrow" data-i18n="q_eye">Acheter à St Barth</div>
+      <h2 data-i18n="q_title">Un moteur pour votre annexe ?</h2>
+      <div class="soon" data-i18n="sale">À la vente uniquement · pas de location</div>
+      <p data-i18n="q_p">Les moteurs Momentum sont proposés à la vente uniquement : ils ne font pas partie de nos locations. Écrivez-nous avec le modèle de votre annexe, nous vous conseillons le bon moteur et la bonne longueur d'arbre. Prix et disponibilité sur demande.</p>
+      <div class="cta"><a class="btn btn-red" href="mailto:contact@poseidonyachtingcaraibes.com?subject=Devis%20moteur%20Momentum"><span data-i18n="q_btn">Demander un devis</span></a></div>
+      <p class="more"><a href="https://momentumelectricmarineeurope.com" target="_blank" rel="noopener"><span data-i18n="q_more">Site officiel Europe : momentumelectricmarineeurope.com</span></a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div><img class="logo" src="img/logo-blanc.png" alt="Poseidon Yachting Caraïbes"></div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="mailto:contact@poseidonyachtingcaraibes.com">contact@poseidonyachtingcaraibes.com</a></p>
+        <p>Rue Jeanne d'Arc<br>Port de Gustavia<br>97133 Saint-Barthélemy</p>
+      </div>
+      <div>
+        <h3 data-i18n="ft_follow">Suivez-nous</h3>
+        <div class="social">
+          <a id="lien-instagram" href="https://www.instagram.com/poseidonyachtingcaraibes/" target="_blank" rel="noopener" aria-label="Instagram @poseidonyachtingcaraibes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3Zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm4.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1C3.9 5.1 5.2 3.8 7.9 3.7c1.1-.1 1.4-.1 4.1-.1ZM12 2c-2.7 0-3.1 0-4.2.1C4.2 2.2 2.2 4.2 2.1 7.8 2 8.9 2 9.3 2 12s0 3.1.1 4.2c.1 3.6 2.1 5.6 5.7 5.7 1.1.1 1.5.1 4.2.1s3.1 0 4.2-.1c3.6-.1 5.6-2.1 5.7-5.7.1-1.1.1-1.5.1-4.2s0-3.1-.1-4.2c-.1-3.6-2.1-5.6-5.7-5.7C15.1 2 14.7 2 12 2Z"/></svg></a>
+          <a id="lien-facebook" href="https://www.facebook.com/profile.php?id=61596115305865" target="_blank" rel="noopener" aria-label="Facebook Poseidon Yachting Caraïbes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a>
+        </div>
+        <p style="margin-top:10px;font-size:.88rem">@poseidonyachtingcaraibes</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Poseidon Yachting Caraïbes · Saint-Barthélemy</span>
+      <span data-i18n="ft_dist">Sublue, JetWave et Momentum sont distribués par Poseidon Yachting</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var T={"en": {"nav_prices": "Prices", "nav_book": "Book", "nav_home": "Home", "ft_follow": "Follow us", "ft_dist": "Sublue, JetWave and Momentum are distributed by Poseidon Yachting", "g_title": "Gallery", "v_title": "Video", "yt_play": "Play video", "sale": "For sale only · not available to rent", "h_eye": "Momentum Electric Marine · Electric outboard", "h_title": "Momentum outboards", "h_lead": "The electric outboard built for yacht tenders: powerful, silent, no gas on board. Available for purchase in St. Barts, with advice and setup.", "cta1": "Request a quote", "cta2": "Watch the videos", "k1": "10 kW", "k1d": "M10, equivalent to 15–20 hp", "k2": "48 lb", "k2d": "the M10 can be carried by hand", "k3": "16 knots", "k3d": "on an 11 ft RIB with 3 people", "k4": "METS 2024", "k4d": "shortlisted for best innovative design", "b_eye": "The brand", "b_title": "Why Momentum?", "b_p1": "Momentum Electric Marine sets out to make boating powerful, quiet and simple. In its very first year on the market, the M10 was shortlisted for best innovative design at METS Trade 2024, one of the boating industry's leading trade shows.", "b_p2": "The M10 is the lightest in its class and the only 10 kW outboard designed to be carried by hand. Its transom bracket locks in with one click: leave the mount on the tender and take the motor with you. Poseidon Yachting is Momentum's exclusive distributor in Europe.", "a1": "Electric and silent", "a1d": "Instant thrust, no noise at anchor.", "a2": "No gas", "a2d": "Recharge at the dock, from the yacht's generator or with solar.", "a3": "Safety", "a3d": "CAN-Bus interface, magnetic kill switch, waterproof connectors.", "m_eye": "The lineup", "m_title": "Two motors, from RIBs to light tenders", "m10_t": "Momentum M10", "m10_s": "10 kW · 15–20 hp equivalent", "m10_p": "For RIBs and tenders, right up to fast runs: up to 16 knots, or 18 hours at 3 knots.", "m10_l1": "22–24 kg motor, short, long or extra-long shaft", "m10_l2": "MB-6 battery: 6.8 kWh, 72 V, 1,500 cycles", "m10_l3": "5-position trim bracket, remote steering compatible", "m10_l4": "Comes complete: battery, charger, cable, bracket, leash", "u2_t": "Momentum U2", "u2_s": "2.5 kW · 5 hp equivalent", "u2_p": "For light tenders and sailboats: just 9 kg, removable battery with onboard computer and GPS.", "u2_l1": "1.4 kWh, 48 V, 8 kg battery, 1,000 cycles", "u2_l2": "Up to 8 knots, or 7.5 hours at 3 knots", "u2_l3": "Folding tiller, anti-ventilation plate as standard", "u2_l4": "3-year warranty · 3 kW upgrade planned for spring 2027", "perf_note": "Manufacturer figures measured on an 11 ft RIB (3 people for the M10, 1 person for the U2).", "q_eye": "Buy in St. Barts", "q_title": "A motor for your tender?", "q_p": "Momentum motors are for sale only: they are not part of our rentals. Email us with your tender model and we'll recommend the right motor and shaft length. Pricing and availability on request.", "q_btn": "Request a quote", "q_more": "Official European site: momentumelectricmarineeurope.com", "vid1": "First sea trial: twin M10 setup", "vid2": "Introducing the U2", "vid3": "Twin M10s tow a wakeboarder"}, "es": {"nav_prices": "Precios", "nav_book": "Reservar", "nav_home": "Inicio", "ft_follow": "Síguenos", "ft_dist": "Sublue, JetWave y Momentum son distribuidos por Poseidon Yachting", "g_title": "Galería", "v_title": "Vídeo", "yt_play": "Ver el vídeo", "sale": "Solo a la venta · no disponible en alquiler", "h_eye": "Momentum Electric Marine · Fueraborda eléctrico", "h_title": "Motores Momentum", "h_lead": "El fueraborda eléctrico pensado para las auxiliares de yates: potente, silencioso, sin gasolina a bordo. A la venta en San Bartolomé, con asesoramiento y puesta en marcha.", "cta1": "Pedir presupuesto", "cta2": "Ver los vídeos", "k1": "10 kW", "k1d": "M10, equivalente a 15–20 CV", "k2": "22 kg", "k2d": "el M10 se lleva a mano", "k3": "30 km/h", "k3d": "en semirrígida de 3,40 m con 3 personas", "k4": "METS 2024", "k4d": "nominado entre los mejores diseños innovadores", "b_eye": "La marca", "b_title": "¿Por qué Momentum?", "b_p1": "Momentum Electric Marine quiere que navegar sea potente, silencioso y sencillo. En su primer año en el mercado, el M10 fue nominado entre los mejores diseños innovadores en METS Trade 2024, una de las principales ferias profesionales del sector náutico.", "b_p2": "El M10 es el más ligero de su categoría y el único de 10 kW diseñado para llevarse a mano. Su soporte de espejo se bloquea con un clic: el soporte se queda en la auxiliar y el motor se lleva. Poseidon Yachting es el distribuidor exclusivo de Momentum en Europa.", "a1": "Eléctrico y silencioso", "a1d": "Propulsión instantánea, sin ruido en el fondeo.", "a2": "Sin gasolina", "a2d": "Se recarga en el muelle, con el generador del yate o con energía solar.", "a3": "Seguridad", "a3d": "Interfaz CAN-Bus, cortacorriente magnético, conectores estancos.", "m_eye": "La gama", "m_title": "Dos motores, de la semirrígida a la auxiliar ligera", "m10_t": "Momentum M10", "m10_s": "10 kW · equivalente a 15–20 CV", "m10_p": "Para semirrígidas y auxiliares, hasta salidas rápidas: hasta 30 km/h, o 18 h de navegación a 6 km/h.", "m10_l1": "Motor de 22 a 24 kg, eje corto, largo o extralargo", "m10_l2": "Batería MB-6: 6,8 kWh, 72 V, 1500 ciclos", "m10_l3": "Soporte con 5 posiciones de trim, compatible con dirección remota", "m10_l4": "Se entrega completo: batería, cargador, cable, soporte, leash", "u2_t": "Momentum U2", "u2_s": "2,5 kW · equivalente a 5 CV", "u2_p": "Para auxiliares ligeras y veleros: solo 9 kg, batería extraíble con ordenador de a bordo y GPS.", "u2_l1": "Batería de 1,4 kWh, 48 V, 8 kg, 1000 ciclos", "u2_l2": "Hasta 15 km/h, o 7 h 30 de navegación a 5,7 km/h", "u2_l3": "Caña plegable, placa antiventilación de serie", "u2_l4": "Garantía de 3 años · extensión a 3 kW prevista para la primavera de 2027", "perf_note": "Prestaciones medidas por el fabricante en una semirrígida de 3,40 m (3 personas para el M10, 1 persona para el U2).", "q_eye": "Comprar en San Bartolomé", "q_title": "¿Un motor para su auxiliar?", "q_p": "Los motores Momentum se ofrecen solo a la venta: no forman parte de nuestros alquileres. Escríbanos con el modelo de su auxiliar y le aconsejaremos el motor y la longitud de eje adecuados. Precio y disponibilidad bajo consulta.", "q_btn": "Pedir presupuesto", "q_more": "Web oficial Europa: momentumelectricmarineeurope.com", "vid1": "Primera prueba en el mar: dos M10 en bimotor", "vid2": "Presentación del U2", "vid3": "Dos M10 remolcan a un wakeboarder"}, "pt": {"nav_prices": "Preços", "nav_book": "Reservar", "nav_home": "Início", "ft_follow": "Siga-nos", "ft_dist": "Sublue, JetWave e Momentum são distribuídos pela Poseidon Yachting", "g_title": "Galeria", "v_title": "Vídeo", "yt_play": "Ver o vídeo", "sale": "Somente à venda · não disponível para aluguel", "h_eye": "Momentum Electric Marine · Motor de popa elétrico", "h_title": "Motores Momentum", "h_lead": "O motor de popa elétrico pensado para botes de apoio de iates: potente, silencioso, sem gasolina a bordo. À venda em Saint-Barth, com consultoria e instalação.", "cta1": "Pedir orçamento", "cta2": "Ver os vídeos", "k1": "10 kW", "k1d": "M10, equivalente a 15–20 hp", "k2": "22 kg", "k2d": "o M10 se carrega na mão", "k3": "30 km/h", "k3d": "em bote de 3,40 m com 3 pessoas", "k4": "METS 2024", "k4d": "indicado entre os melhores designs inovadores", "b_eye": "A marca", "b_title": "Por que Momentum?", "b_p1": "A Momentum Electric Marine quer tornar a navegação potente, silenciosa e simples. Já no primeiro ano no mercado, o M10 foi indicado entre os melhores designs inovadores na METS Trade 2024, uma das principais feiras profissionais do setor náutico.", "b_p2": "O M10 é o mais leve da categoria e o único de 10 kW projetado para ser carregado na mão. O suporte de popa trava com um clique: o suporte fica no bote e o motor vai com você. A Poseidon Yachting é a distribuidora exclusiva da Momentum na Europa.", "a1": "Elétrico e silencioso", "a1d": "Propulsão instantânea, sem ruído na ancoragem.", "a2": "Sem gasolina", "a2d": "Recarrega no cais, no gerador do iate ou com energia solar.", "a3": "Segurança", "a3d": "Interface CAN-Bus, corta-circuito magnético, conectores estanques.", "m_eye": "A linha", "m_title": "Dois motores, do bote inflável ao bote leve", "m10_t": "Momentum M10", "m10_s": "10 kW · equivalente a 15–20 hp", "m10_p": "Para botes infláveis e de apoio, até saídas rápidas: até 30 km/h, ou 18 h de navegação a 6 km/h.", "m10_l1": "Motor de 22 a 24 kg, eixo curto, longo ou extralongo", "m10_l2": "Bateria MB-6: 6,8 kWh, 72 V, 1.500 ciclos", "m10_l3": "Suporte com 5 posições de trim, compatível com direção remota", "m10_l4": "Entregue completo: bateria, carregador, cabo, suporte, leash", "u2_t": "Momentum U2", "u2_s": "2,5 kW · equivalente a 5 hp", "u2_p": "Para botes leves e veleiros: apenas 9 kg, bateria removível com computador de bordo e GPS.", "u2_l1": "Bateria de 1,4 kWh, 48 V, 8 kg, 1.000 ciclos", "u2_l2": "Até 15 km/h, ou 7 h 30 de navegação a 5,7 km/h", "u2_l3": "Cana do leme dobrável, placa antiventilação de série", "u2_l4": "Garantia de 3 anos · extensão para 3 kW prevista para a primavera de 2027", "perf_note": "Desempenho medido pelo fabricante em um bote de 3,40 m (3 pessoas no M10, 1 pessoa no U2).", "q_eye": "Comprar em Saint-Barth", "q_title": "Um motor para o seu bote?", "q_p": "Os motores Momentum são oferecidos somente à venda: não fazem parte dos nossos aluguéis. Escreva-nos com o modelo do seu bote e indicaremos o motor e o comprimento de eixo certos. Preço e disponibilidade sob consulta.", "q_btn": "Pedir orçamento", "q_more": "Site oficial Europa: momentumelectricmarineeurope.com", "vid1": "Primeiro teste no mar: dois M10 em bimotor", "vid2": "Apresentação do U2", "vid3": "Dois M10 rebocam um wakeboarder"}};
+  var root=document.documentElement, FR={}, LANGTAG={fr:"fr",en:"en-US",es:"es",pt:"pt-BR"};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){FR[el.dataset.i18n]=el.textContent;});
+  function setLang(l){
+    if(!LANGTAG[l])l='fr';
+    var d=T[l]||{};
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;el.textContent=(l==='fr'||!d[k])?FR[k]:d[k];});
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){var k=el.dataset.i18nAria;el.setAttribute('aria-label',(l==='fr'||!d[k])?el.dataset.fr:d[k]);});
+    root.lang=LANGTAG[l];root.setAttribute('data-lang',l);
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');});
+    try{localStorage.setItem('pyc-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el){el.dataset.fr=el.getAttribute('aria-label');});
+  var saved=null;try{saved=localStorage.getItem('pyc-lang');}catch(e){}
+  var h=location.hash.replace('#','');if(LANGTAG[h])saved=h;
+  if(!saved){var n=(navigator.language||'fr').slice(0,2).toLowerCase();saved=LANGTAG[n]?n:'en';}
+  setLang(saved);
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set);});});
+  document.querySelectorAll('.ytc button').forEach(function(b){b.addEventListener('click',function(){
+    var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+    f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;b.replaceWith(f);
+  });});
+})();
+</script>
+</body>
+</html>
